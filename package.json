@@ -28,6 +28,7 @@
 >>>>>>> 7ef13a472d1df9c0b5d710fc0b3f0dfd83095004
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
