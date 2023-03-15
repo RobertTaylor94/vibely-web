@@ -5,27 +5,14 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-<<<<<<< HEAD
     "@faker-js/faker": "^7.6.0",
-=======
->>>>>>> bbaa302a1d7ba004d677710822fe3ee86f582066
     "@mui/material": "^5.11.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "bootstrap": "^5.2.3",
-=======
     "bootstrap": "^5.2.3",
     "faker": "^6.6.6",
->>>>>>> bbaa302a1d7ba004d677710822fe3ee86f582066
     "firebase": "^9.17.2",
-    "i": "^0.3.7",
-    "npm": "^9.6.1",
-=======
-    "firebase": "^9.17.2",
->>>>>>> 7ef13a472d1df9c0b5d710fc0b3f0dfd83095004
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
