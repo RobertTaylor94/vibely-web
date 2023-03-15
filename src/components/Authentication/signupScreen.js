@@ -10,7 +10,6 @@ function SignUp() {
     const handleInput = (event) => {
         let newInput = { [event.target.name]: event.target.value }
         setData({ ...data, ...newInput})
-        console.log(data.email, data.password)
     }
 
     const handleSubmit = () => {
@@ -20,8 +19,8 @@ function SignUp() {
             console.log(response.user)
         })
         .catch((err) => {
-            alert(err.message)
             console.log(err)
+            alert(err.message)
         })
     }
 
