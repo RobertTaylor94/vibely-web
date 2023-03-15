@@ -4,6 +4,7 @@ import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Profile from './components/Profile';
 import TweetBox from './components/TweetBox.js';
+import PostCard from './components/PostCard/PostCard'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
         </Routes>
         <TweetBox />
+        <PostCard />
       </div>
     </Router>
   );
