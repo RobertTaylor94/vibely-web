@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Profile from './components/Profile';
+import SignUp from './components/Authentication/signupScreen';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/signup' element={<SignUp />} />
         </Routes>
       </div>
     </Router>
