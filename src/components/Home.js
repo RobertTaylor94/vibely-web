@@ -1,5 +1,6 @@
 import SideCard from './SideCard.js'
 import TweetBox from './TweetBox.js'
+import StoriesBar from './StoriesBar.js'
 
 export default function Home() {
     return (
@@ -9,6 +10,7 @@ export default function Home() {
             <SideCard />
           </div>
           <div class="col-6">
+            <StoriesBar />
             <TweetBox />
           </div>
           <div class="col">
