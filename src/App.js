@@ -6,8 +6,12 @@ import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Profile from './components/Profile';
 import SignUp from './components/Authentication/signupScreen';
+import SignIn from './components/Authentication/Signinscreen';
 
 function App() {
+
+
+
   return (
     <Router>
       <div>
@@ -16,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/signin' element={<SignIn />} />
         </Routes>
       </div>
     </Router>
