@@ -13,13 +13,12 @@ function SignUp() {
     }
 
     const handleSubmit = () => {
-        console.log("handleSubmit pressed")
         createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((response) => {
             console.log(response.user)
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.code)
             alert(err.message)
         })
     }
@@ -27,7 +26,7 @@ function SignUp() {
     return (
     <div>
         <Typography variant='h2' gutterBottom>Sign Up</Typography>
-        <Box component='form' sx={{ margin: '20px' }}>
+        <Box component='form' sx={{ margin: '20px' }} >
             <TextField
                 sx={{ margin: '10' }}
                 name='email'
