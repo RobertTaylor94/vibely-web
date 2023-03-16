@@ -7,13 +7,26 @@ import Home from './components/Home.js'
 import Profile from './components/Profile';
 import SignUp from './components/Authentication/signupScreen';
 import SignIn from './components/Authentication/Signinscreen';
+import { useState, useEffect } from 'react';
+import { AuthProvider } from './AuthContext';
+import { auth } from './firebaseConfig';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function App() {
 
+  const [currentUser, setCurrentUser] = useState(null)
 
+  useEffect(() => {
+    //set current user to the state when firebase auth changes
+    onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user)
+    })
+  }, [])
 
   return (
     <Router>
+      {/* pass currentuser to all components */}
+      <AuthProvider value={{currentUser}}>
       <div>
         <NavBar />
         <Routes>
@@ -23,6 +36,7 @@ function App() {
           <Route path='/signin' element={<SignIn />} />
         </Routes>
       </div>
+      </AuthProvider>
     </Router>
   );
 }
