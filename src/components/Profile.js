@@ -1,6 +1,8 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
 import React from "react";
 import { useAuthValue } from "../AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
 export default function Profile() {
     const {currentUser} = useAuthValue()
@@ -11,6 +13,7 @@ export default function Profile() {
     return (
         <Container>
             <Typography variant="h3">User: {userEmail}</Typography>
+            <Button variant='container' component='span' onClick={() => signOut(auth)}>Sign Out</Button>
         </Container>
     )
 }
