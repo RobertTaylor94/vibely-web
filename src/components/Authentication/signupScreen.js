@@ -4,9 +4,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import SignIn from "./Signinscreen";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
     const [data, setData] = useState({});
+    const navigate = useNavigate();
 
     const handleInput = (event) => {
         let newInput = { [event.target.name]: event.target.value }
@@ -15,9 +17,11 @@ function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        
         createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((response) => {
             console.log(response.user)
+            navigate("/profile")
         })
         .catch((err) => {
             console.log(err.code)
