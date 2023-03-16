@@ -9,12 +9,12 @@ function TweetBox() {
       component="form"
       autoComplete="off"
     >
-      <Card sx={{ maxWidth: 550, height: 130 }}>
+      <Card sx={{ height: 130 }}>
 
         <CardContent className="row d-flex flex-nowrap justify-content-around">
           <Avatar>D</Avatar>
           <TextField
-            sx={{ maxWidth: 450 }}
+            sx={{ maxWidth: '85%' }}
             placeholder="What's on your mind?"
             variant="standard"
           />
