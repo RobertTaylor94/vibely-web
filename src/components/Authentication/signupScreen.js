@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button, Container, TextField, Box, Typography } from "@mui/material";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import app from '../../firebaseConfig'
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
+import SignIn from "./Signinscreen";
+import { Link } from "react-router-dom";
 
 function SignUp() {
-    let auth = getAuth();
     const [data, setData] = useState({});
 
     const handleInput = (event) => {
@@ -12,7 +13,8 @@ function SignUp() {
         setData({ ...data, ...newInput})
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((response) => {
             console.log(response.user)
@@ -21,6 +23,8 @@ function SignUp() {
             console.log(err.code)
             alert(err.message)
         })
+        const newData = ""
+        setData({newData})
     }
 
     return (
@@ -43,8 +47,12 @@ function SignUp() {
                 variant='outlined'
                 onChange={(e) => handleInput(e)}
             />
-            <Box sx={{ margin: '10px' }}><Button type='submit' variant='contained' onClick={handleSubmit}> Submit</Button></Box>
+            <Box sx={{ margin: '10px' }}><Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)}> Submit</Button></Box>
             </Box>
+            <Container>
+                <Typography>Already have an account?</Typography>
+                <Button component={Link} key="signin" to="/signin">Sign In</Button>
+            </Container>
     </div>
             
     )
