@@ -13,7 +13,7 @@ export default function Profile() {
     return (
         <Container>
             <Typography variant="h3">User: {userEmail}</Typography>
-            <Button variant='container' component='span' onClick={() => signOut(auth)}>Sign Out</Button>
+            <Button variant='container' onClick={() => signOut(auth)}>Sign Out</Button>
         </Container>
     )
 }
