@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Faker from './components/Faker';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
