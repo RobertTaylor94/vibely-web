@@ -9,10 +9,11 @@ export default function Profile() {
     console.log(currentUser)
     //set user email from currentUser if it is not null
     const userEmail = currentUser ? currentUser.email : ''
+    const displayName = currentUser ? currentUser.displayName : ''
 
     return (
         <Container>
-            <Typography variant="h3">User: {userEmail}</Typography>
+            <Typography variant="h3">User: {displayName}</Typography>
             <Button variant='container' onClick={() => signOut(auth)}>Sign Out</Button>
         </Container>
     )
