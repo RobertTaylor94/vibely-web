@@ -4,7 +4,7 @@ import { useAuthValue } from "../AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 
-export default function Profile() {
+export default function UserProfile() {
     const {currentUser} = useAuthValue()
     console.log(currentUser)
     //set user email from currentUser if it is not null
