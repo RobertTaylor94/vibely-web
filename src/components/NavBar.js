@@ -5,8 +5,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AddCircleIcon from '@mui/icons-material/AddCircleOutline';
 import { useAuthValue } from "../AuthContext";
 
-const drawerWidth = 240;
-
 function NavBar(props) {
 
     const {currentUser} = useAuthValue()
@@ -22,7 +20,7 @@ function NavBar(props) {
                 </Box>
                 <Box>
                     <Button variant="contained" component={Link} key="signup" to="/signup" >Sign Up</Button>
-                    <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button>
+                    {/* <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button> */}
                     <Button component={Link} key="profile" to="/profile"><Avatar alt="profile icon" src="">{inital}</Avatar></Button>
                 </Box>
             </Toolbar>
