@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
+import SetupProfile from './pages/SetupProfile';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn />} />
+          <Route path='/setup' element={<SetupProfile />} />
         </Routes>
       </div>
       </AuthProvider>
