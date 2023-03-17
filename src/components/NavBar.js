@@ -7,10 +7,9 @@ import { useAuthValue } from "../AuthContext";
 
 function NavBar(props) {
 
-    const {currentUser} = useAuthValue();
-
+    const {currentUser} = useAuthValue()
+    const inital = currentUser ? currentUser.displayName.charAt(0).toUpperCase() : "P";
     const loggedIn = currentUser ? "none" : "";
-    console.log(loggedIn);
 
   return (
     <Box sx={{ display: "flex", paddingTop: "60px" }}>
@@ -21,9 +20,9 @@ function NavBar(props) {
                     <Button color="inherit" component={Link} key="home" to="/"><Typography variant="h6">Vibely</Typography></Button>
                 </Box>
                 <Box>
-                    <Button variant="contained" component={Link} key="signup" to="/signup" sx={{ display: `${loggedIn}` }} >Sign Up</Button>
-                    <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button>
-                    <Button component={Link} key="profile" to="/profile"><Avatar alt="profile" src=""></Avatar></Button>
+                    <Button variant="contained" component={Link} key="signup" to="/signup" sx={{ display: `${loggedIn}` }}>Sign Up</Button>
+                    {/* <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button> */}
+                    <Button component={Link} key="profile" to="/profile"><Avatar alt="profile icon" src="">{inital}</Avatar></Button>
                 </Box>
             </Toolbar>
         </AppBar>
