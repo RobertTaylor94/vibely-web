@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import { AppBar, Box, Avatar, Button, Typography, Divider, List, ListItem, ListItemButton, ListItemText, CssBaseline, Toolbar, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AddCircleIcon from '@mui/icons-material/AddCircleOutline';
+import { useAuthValue } from "../AuthContext";
 
 const drawerWidth = 240;
 
 function NavBar(props) {
+
+    const {currentUser} = useAuthValue()
+    const inital = currentUser ? currentUser.displayName.charAt(0).toUpperCase() : "P";
 
   return (
     <Box sx={{ display: "flex", paddingTop: "60px" }}>
@@ -19,7 +23,7 @@ function NavBar(props) {
                 <Box>
                     <Button variant="contained" component={Link} key="signup" to="/signup" >Sign Up</Button>
                     <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button>
-                    <Button component={Link} key="profile" to="/profile"><Avatar alt="profile" src=""></Avatar></Button>
+                    <Button component={Link} key="profile" to="/profile"><Avatar alt="profile icon" src="">{inital}</Avatar></Button>
                 </Box>
             </Toolbar>
         </AppBar>
