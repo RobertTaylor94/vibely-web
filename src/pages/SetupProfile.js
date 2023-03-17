@@ -21,9 +21,9 @@ export default function SetupProfile() {
         e.preventDefault()
 
         updateProfile(currentUser, {
-            displayName: data.username
+            displayName: data.displayName
         }).then(() => {
-            console.log(`New username: ${currentUser.username}`)
+            console.log(`New displayname: ${currentUser.displayName}`)
         }).catch((error) => {
             console.log(error)
         })
@@ -35,9 +35,9 @@ export default function SetupProfile() {
         <Container>
             <TextField     
                 sx={{ margin: '10' }}
-                name='username'
-                id='username'
-                label='Username'
+                name='displayName'
+                id='displayName'
+                label='Display Name'
                 variant='outlined'
                 onChange={(e) => handleInput(e)}/>
             <Button variant="contained" onClick={(e) => handleSubmit(e)}>Complete Profile</Button>
