@@ -10,6 +10,7 @@ import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 import SetupProfile from './pages/SetupProfile';
+import PostCard from './components/PostCard/PostCard';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         </Routes>
       </div>
       </AuthProvider>
+      <PostCard />
     </Router>
   );
 }
