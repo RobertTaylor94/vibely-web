@@ -10,6 +10,7 @@ import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 import SetupProfile from './pages/SetupProfile';
+import FollowerProfile  from './pages/FollowerProfile';
 
 function App() {
 
