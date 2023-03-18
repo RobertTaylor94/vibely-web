@@ -11,6 +11,7 @@ import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 import SetupProfile from './pages/SetupProfile';
 
+
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)

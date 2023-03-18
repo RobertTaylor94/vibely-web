@@ -1,0 +1,21 @@
+.card-actions-container {
+    display: flex;
+}
+
+.comment {
+    margin-left: auto !important;
+}
+
+.image {
+    /* width: 100px; */
+}
+
+.main-container {
+    align-self: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+  }
+  
