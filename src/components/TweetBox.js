@@ -12,8 +12,13 @@ import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
 import GifBoxIcon from "@mui/icons-material/GifBox";
 import { useAuthValue } from "../AuthContext";
+import { useState } from "react";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 function TweetBox() {
+  const [data, setData] = useState({});
+
   const { currentUser } = useAuthValue();
   let initial = "";
   if (currentUser && currentUser.displayName) {
@@ -22,7 +27,28 @@ function TweetBox() {
     initial = "P";
   }
 
-  const postVibe = () => {};
+  const handleInput = (e) => {
+    let newInput = { [e.target.name]: e.target.value };
+    setData({ ...data, ...newInput });
+  };
+
+  const postVibe = () => {
+    //create a new post object user the texfield input and current user unfo
+    const newVibe = {
+      displayName: currentUser.displayName,
+      uid: currentUser.uid,
+      post: data.vibe,
+    };
+  
+    const vibesCollection = collection(db, "vibes", `${currentUser.uid}`, "posts") //sets a reference to a posts subcollection in the current user
+    addDoc(vibesCollection, newVibe) //adds a new document containg the post to a subcollection the users own collection
+      .then((docRef) => {
+        console.log("User added successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <Box component="form" autoComplete="off">
@@ -33,6 +59,8 @@ function TweetBox() {
             sx={{ maxWidth: "85%" }}
             placeholder="What's on your mind?"
             variant="standard"
+            name="vibe"
+            onChange={(e) => handleInput(e)}
           />
         </CardContent>
 
