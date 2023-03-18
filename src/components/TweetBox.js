@@ -4,6 +4,11 @@ import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual
 import GifBoxIcon from '@mui/icons-material/GifBox';
 
 function TweetBox() {
+
+const postVibe = () => {
+
+}
+
   return (
     <Box
       component="form"
@@ -32,7 +37,7 @@ function TweetBox() {
                 sx={{ borderRadius: 50 }}
                 variant="contained"
                 color="primary"
-                href="#contained-buttons">
+                onClick={(e) => postVibe(e)}>
                 Vibe
               </Button>
             </div>
