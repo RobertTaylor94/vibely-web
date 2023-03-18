@@ -1,6 +1,7 @@
 import SideCard from './SideCard.js'
 import TweetBox from './TweetBox.js'
 import StoriesBar from './StoriesBar.js'
+import Postcard from './PostCard/PostCard.js'
 
 export default function Home() {
     return (
@@ -12,6 +13,9 @@ export default function Home() {
           <div class="col-6">
             <StoriesBar />
             <TweetBox />
+            <div id='feed'>
+              <Postcard />
+            </div>
           </div>
           <div class="col">
             <SideCard />
