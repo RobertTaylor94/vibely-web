@@ -8,7 +8,12 @@ import { useAuthValue } from "../AuthContext";
 function NavBar(props) {
 
     const {currentUser} = useAuthValue()
-    const inital = currentUser ? currentUser.displayName.charAt(0).toUpperCase() : "P";
+    let initial = ""
+    if (currentUser && currentUser.displayName) {
+        initial = currentUser.displayName.charAt(0).toUpperCase()
+    } else {
+        initial = "P"
+    }
     const loggedIn = currentUser ? "none" : "";
 
   return (
@@ -22,7 +27,7 @@ function NavBar(props) {
                 <Box>
                     <Button variant="contained" component={Link} key="signup" to="/signup" sx={{ display: `${loggedIn}` }}>Sign Up</Button>
                     {/* <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button> */}
-                    <Button component={Link} key="profile" to="/profile"><Avatar alt="profile icon" src="">{inital}</Avatar></Button>
+                    <Button component={Link} key="profile" to="/profile"><Avatar alt="profile icon" src="">{initial}</Avatar></Button>
                 </Box>
             </Toolbar>
         </AppBar>
