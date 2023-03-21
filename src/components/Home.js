@@ -2,6 +2,7 @@ import SideCard from './SideCard.js'
 import TweetBox from './TweetBox.js'
 import StoriesBar from './StoriesBar.js'
 import Postcard from './PostCard/PostCard.js'
+import NewsList from './NewsList.js'
 
 export default function Home() {
     return (
@@ -18,7 +19,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col">
-            <SideCard />
+            <NewsList/>
           </div>
         </div>
       </div>
