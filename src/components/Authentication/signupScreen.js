@@ -5,6 +5,7 @@ import { auth } from "../../firebaseConfig";
 import SignIn from "./Signinscreen";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useAuthValue } from "../../AuthContext";
 
 function SignUp() {
     const [data, setData] = useState({});
@@ -13,6 +14,7 @@ function SignUp() {
     const handleInput = (event) => {
         let newInput = { [event.target.name]: event.target.value }
         setData({ ...data, ...newInput})
+        console.log(data)
     }
 
     const handleSubmit = (e) => {
@@ -21,7 +23,7 @@ function SignUp() {
         createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((response) => {
             console.log(response.user)
-            navigate("/profile")
+            navigate("/setup")
         })
         .catch((err) => {
             console.log(err.code)
@@ -51,7 +53,9 @@ function SignUp() {
                 variant='outlined'
                 onChange={(e) => handleInput(e)}
             />
-            <Box sx={{ margin: '10px' }}><Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)}> Submit</Button></Box>
+            <Box sx={{ margin: '10px' }}>
+                <Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)}> Submit</Button>
+            </Box>
             </Box>
             <Container>
                 <Typography>Already have an account?</Typography>

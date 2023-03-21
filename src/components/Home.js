@@ -1,19 +1,23 @@
 import SideCard from './SideCard.js'
 import TweetBox from './TweetBox.js'
 import StoriesBar from './StoriesBar.js'
+import Postcard from './PostCard/PostCard.js'
 
 export default function Home() {
     return (
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col">
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col">
             <SideCard />
           </div>
-          <div class="col-6">
+          <div className="col-6">
             <StoriesBar />
             <TweetBox />
+            <div id='feed'>
+              <Postcard />
+            </div>
           </div>
-          <div class="col">
+          <div className="col">
             <SideCard />
           </div>
         </div>

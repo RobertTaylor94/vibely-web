@@ -2,13 +2,16 @@ import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
-import Profile from './components/Profile';
+import Profile from './pages/Profile';
 import SignUp from './components/Authentication/signupScreen';
 import SignIn from './components/Authentication/Signinscreen';
 import { useState, useEffect } from 'react';
 import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
+import SetupProfile from './pages/SetupProfile';
+import PostCard from './components/PostCard/PostCard';
+
 
 function App() {
 
@@ -32,6 +35,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn />} />
+          <Route path='/setup' element={<SetupProfile />} />
         </Routes>
       </div>
       </AuthProvider>
