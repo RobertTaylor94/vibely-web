@@ -29,7 +29,7 @@ export default function SetupProfile() {
             console.log(error)
         })
 
-        const dbRef = collection(db, "users")
+        const dbRef = collection(db, "users", `${currentUser.uid}}`)
         const user = {
             displayName: data.displayName,
             bio: data.bio,
