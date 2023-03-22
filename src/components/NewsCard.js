@@ -1,14 +1,15 @@
+import { Card, CardContent, Typography, Button } from "@mui/material";
 import React from "react";
 
-function NewsCard({title,description,url,urlToImage}) {
+function NewsCard({title,description,url,urlToImage, source}) {
   return (
-    <div>
-      <img src={urlToImage} alt="News"></img>
-      <h5 >
-        <a href={url}>{title}</a>
-      </h5>
-      <p>{description}</p>
-    </div>
+    <Card sx={{ margin: "10px" }}>
+      <CardContent>
+        <Typography>{source.Name}</Typography>
+        <Button href={url} target="_blank">{title}</Button>
+        <Typography>{description}</Typography>
+      </CardContent>
+    </Card>
   )
 }
 

@@ -7,22 +7,22 @@ const NewsList = () => {
 
 useEffect (()=>{
     const getArticles = async () => {
-        const res = await Axios.get("https://newsapi.org/v2/top-headlines?country=us&pageSize=1&apiKey=1f93e82d73464a6689bbcdceacf77aa7");
+        const res = await Axios.get("https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apiKey=1f93e82d73464a6689bbcdceacf77aa7");
         setArticles(res.data.articles)
         console.log(res);
     };
     getArticles();
 },[]);
 
-
     return <div>
-        
-        {articles.map(({title,desription,url,urlToImage}) => (
+        {articles.map(({title,desription,url,urlToImage, source}) => (
             <NewsCard
+            key = {url}
              title = {title} 
              description = {desription} 
              url = {url} 
              urlToImage = {urlToImage} 
+             source = {source}
              />
         ))}
     </div>;
