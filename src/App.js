@@ -2,7 +2,7 @@ import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
-import Profile from './pages/Profile';
+import UserProfile from './pages/UserProfile';
 import SignUp from './components/Authentication/signupScreen';
 import SignIn from './components/Authentication/Signinscreen';
 import { useState, useEffect } from 'react';
@@ -10,8 +10,7 @@ import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 import SetupProfile from './pages/SetupProfile';
-import PostCard from './components/PostCard/PostCard';
-
+import FollowerProfile  from './pages/FollowerProfile';
 
 function App() {
 
@@ -32,10 +31,11 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<UserProfile />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/setup' element={<SetupProfile />} />
+          <Route path='/follower' element={<FollowerProfile />} />
         </Routes>
       </div>
       </AuthProvider>

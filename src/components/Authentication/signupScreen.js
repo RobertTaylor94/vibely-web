@@ -14,7 +14,6 @@ function SignUp() {
     const handleInput = (event) => {
         let newInput = { [event.target.name]: event.target.value }
         setData({ ...data, ...newInput})
-        console.log(data)
     }
 
     const handleSubmit = (e) => {
@@ -22,7 +21,6 @@ function SignUp() {
         
         createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((response) => {
-            console.log(response.user)
             navigate("/setup")
         })
         .catch((err) => {

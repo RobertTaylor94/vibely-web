@@ -4,6 +4,8 @@ import { useAuthValue } from "../AuthContext";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { collection, doc, addDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 
 export default function SetupProfile() {
 
@@ -14,7 +16,6 @@ export default function SetupProfile() {
     const handleInput = (event) => {
         let newInput = { [event.target.name]: event.target.value }
         setData({ ...data, ...newInput})
-        console.log(data)
     }
 
     const handleSubmit = (e) => {
@@ -28,6 +29,23 @@ export default function SetupProfile() {
             console.log(error)
         })
 
+        const dbRef = collection(db, "users", `${currentUser.uid}}`)
+        const user = {
+            displayName: data.displayName,
+            bio: data.bio,
+            uid: currentUser.uid,
+            followers: []
+        }
+
+        console.log(user)
+
+        addDoc(dbRef, user)
+            .then(docRef => {
+                console.log("Document added successfully")
+            }).catch(error => {
+                console.log(error)
+            })
+
         navigate("/profile")
     }
 
@@ -38,6 +56,13 @@ export default function SetupProfile() {
                 name='displayName'
                 id='displayName'
                 label='Display Name'
+                variant='outlined'
+                onChange={(e) => handleInput(e)}/>
+            <TextField     
+                sx={{ margin: '10' }}
+                name='bio'
+                id='bio'
+                label='Bio'
                 variant='outlined'
                 onChange={(e) => handleInput(e)}/>
             <Button variant="contained" onClick={(e) => handleSubmit(e)}>Complete Profile</Button>
