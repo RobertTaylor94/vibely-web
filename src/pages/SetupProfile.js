@@ -4,7 +4,7 @@ import { useAuthValue } from "../AuthContext";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { collection, doc, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 export default function SetupProfile() {
