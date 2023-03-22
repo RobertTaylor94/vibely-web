@@ -38,7 +38,7 @@ export default function Home() {
     postsSnapshot();
   }, []);
 
-  const postsList = posts.map(post => <Postcard key={post.id} displayname={post.data.displayname} post={post.data.post}/>)
+  const postsList = posts.map(post => <Postcard key={post.id} displayname={post.data.displayName} post={post.data.post}/>)
 
   return (
     <div className="container mt-5">
