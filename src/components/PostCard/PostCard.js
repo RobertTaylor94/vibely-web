@@ -4,7 +4,6 @@ import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
 // import { styled } from '@mui/material/styles';
 import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 // import CardActions from '@mui/material/CardActions';
 import Avatar from "@mui/material/Avatar";

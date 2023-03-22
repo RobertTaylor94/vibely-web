@@ -1,8 +1,6 @@
 import { Container, Typography, Button } from "@mui/material";
 import React from "react";
-import { useAuthValue } from "../AuthContext";
-import { signOut } from "firebase/auth";
-import { auth } from "../firebaseConfig";
+
 
 export default function FolloweProfile(props) {
     const user = props.user

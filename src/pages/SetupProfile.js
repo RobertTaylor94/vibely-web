@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Typography, Container, Button } from "@mui/material";
+import { TextField, Container, Button } from "@mui/material";
 import { useAuthValue } from "../AuthContext";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
