@@ -13,7 +13,7 @@ import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual
 import GifBoxIcon from "@mui/icons-material/GifBox";
 import { useAuthValue } from "../AuthContext";
 import { useState } from "react";
-import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 function TweetBox() {

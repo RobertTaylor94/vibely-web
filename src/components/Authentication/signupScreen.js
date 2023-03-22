@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Button, Container, TextField, Box, Typography } from "@mui/material";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
-import SignIn from "./Signinscreen";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useAuthValue } from "../../AuthContext";
+
 
 function SignUp() {
     const [data, setData] = useState({});
