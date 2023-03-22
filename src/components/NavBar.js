@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Box, Avatar, Button, Typography, Divider, List, ListItem, ListItemButton, ListItemText, CssBaseline, Toolbar, IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import AddCircleIcon from '@mui/icons-material/AddCircleOutline';
+import { AppBar, Box, Avatar, Button, Typography, CssBaseline, Toolbar } from "@mui/material";
 import { useAuthValue } from "../AuthContext";
 
 function NavBar(props) {
