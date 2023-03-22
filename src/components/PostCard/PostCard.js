@@ -8,14 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 // import CardActions from '@mui/material/CardActions';
 import Avatar from "@mui/material/Avatar";
-// import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
 
-import testAvatar from "../../assets/test-avatar.jpg";
-import { CardActions, IconButton } from "@mui/material";
-import ThumbUpRoundedIcon from "@mui/icons-material/ThumbUpRounded";
-import ThumbDownAltRoundedIcon from "@mui/icons-material/ThumbDownAltRounded";
-import ModeCommentRoundedIcon from "@mui/icons-material/ModeCommentRounded";
 
 import "./PostCard.css";
 

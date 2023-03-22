@@ -7,10 +7,7 @@ import { db } from "../firebaseConfig.js";
 import {
   collectionGroup,
   query,
-  getDocs,
-  collection,
   onSnapshot,
-  QuerySnapshot,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
