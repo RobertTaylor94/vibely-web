@@ -19,7 +19,8 @@ import ModeCommentRoundedIcon from "@mui/icons-material/ModeCommentRounded";
 
 import "./PostCard.css";
 
-function Postcard() {
+function Postcard(props) {
+
   return (
     <>
       <Container maxWidth="lg"  style={{ marginTop: "50px" }} className="main-container">
@@ -27,11 +28,11 @@ function Postcard() {
           <CardHeader
             avatar={
               <Avatar
-                src={testAvatar}
+                // src={testAvatar}
                 sx={{ width: 54, height: 54 }}
                 aria-label="recipe"
               >
-                R
+
               </Avatar>
             }
             // }
@@ -40,25 +41,22 @@ function Postcard() {
             //     <MoreVertIcon />
             //   </IconButton>
             // }
-            title="@User-tag"
-            subheader="timestamp from firebase"
+            title={props.displayname}
+            // subheader="timestamp from firebase"
           />
-          <CardMedia
+          {/* <CardMedia
             component="img"
             height="194"
             image="https://media.tenor.com/YqaEAAzzbXwAAAAS/llama-chew.gif"
             alt="Llama turn"
             className="image"
-          />
+          /> */}
           <CardContent>
             <Typography variant="body2" color="text.secondary">
-              Some sort of text content that will be posted to firebase database
-              and then gotten from said database and dynamically generated on
-              our timeline. Potentially also related to the image or news story
-              above? Or a gif from giphy or something?
+              {props.post}
             </Typography>
 
-            <CardActions className="card-action-container">
+            {/* <CardActions className="card-action-container">
                   <IconButton aria-label="like" className="thumb-up">
                     <ThumbUpRoundedIcon />
                   </IconButton>
@@ -68,7 +66,7 @@ function Postcard() {
                   <IconButton className="comment">
                     <ModeCommentRoundedIcon></ModeCommentRoundedIcon>
                   </IconButton>
-            </CardActions>
+            </CardActions> */}
           </CardContent>
         </Card>
       </Container>
