@@ -18,7 +18,6 @@ function SignIn() {
         e.preventDefault()
         signInWithEmailAndPassword(auth, data.email, data.password)
         .then((userCredential) => {
-            const user = userCredential.user
             navigate("/profile")
         })
         .catch((err) => {

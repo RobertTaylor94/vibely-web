@@ -17,6 +17,7 @@ export default function Home() {
 
   function postsSnapshot() {
     const q = query(collectionGroup(db, "posts"));
+    // eslint-disable-next-line
     const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       QuerySnapshot.forEach((doc) => {
         const newPost = {
