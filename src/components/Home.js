@@ -33,7 +33,7 @@ export default function Home() {
 
   useEffect(() => {
     postsSnapshot();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const postsList = posts.map(post => <Postcard key={post.id} displayname={post.data.displayName} post={post.data.post}/>)
 
