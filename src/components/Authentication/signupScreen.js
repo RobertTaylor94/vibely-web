@@ -47,16 +47,17 @@ function SignUp() {
                 name='password'
                 id='password'
                 label='Password'
+                type='password'
                 variant='outlined'
                 onChange={(e) => handleInput(e)}
             />
             <Box sx={{ margin: '10px' }}>
-                <Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)}> Submit</Button>
+                <Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)} sx={{ backgroundColor: 'black' }} > Submit</Button>
             </Box>
             </Box>
             <Container>
                 <Typography>Already have an account?</Typography>
-                <Button component={Link} key="signin" to="/signin">Sign In</Button>
+                <Button component={Link} variant='outlined' key="signin" to="/signin">Sign In</Button>
             </Container>
     </div>
             

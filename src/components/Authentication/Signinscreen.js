@@ -43,10 +43,11 @@ function SignIn() {
                 name='password'
                 id='password'
                 label='Password'
+                type='password'
                 variant='outlined'
                 onChange={(e) => handleInput(e)}
             />
-            <Box sx={{ margin: '10px' }}><Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)}> Submit</Button></Box>
+            <Box sx={{ margin: '10px'}}><Button type='submit' variant='contained' onClick={(e) => handleSubmit(e)} sx={{backgroundColor: 'black' }}> Submit</Button></Box>
             </Box>
     </div>
             
