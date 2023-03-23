@@ -16,7 +16,7 @@ export default function UserProfile() {
     const {currentUser} = useAuthValue()
     console.log(currentUser)
     //set user email from currentUser if it is not null
-    const userEmail = currentUser ? currentUser.email : ''
+    // const userEmail = currentUser ? currentUser.email : ''
     const displayName = currentUser ? currentUser.displayName : ''
     const userBio = currentUser ? currentUser.bio : ''
     return (
