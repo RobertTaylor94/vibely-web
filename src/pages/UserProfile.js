@@ -11,15 +11,30 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { doc,getDoc } from "firebase/firestore";
+import { useState } from "react";
 
 export default function UserProfile() {
     const {currentUser} = useAuthValue()
-    console.log(currentUser)
-
-    //set user email from currentUser if it is not null
+    const [bio, setBio] = useState();
+     //set user email from currentUser if it is not null
     // const userEmail = currentUser ? currentUser.email : ''
     const displayName = currentUser ? currentUser.displayName : ''
     const userEmail = currentUser ? currentUser.email : ''
+    // console.log(currentUser)
+
+   async function getBio() {
+      const docRef = doc(db, "users", currentUser.uid)
+      const docSnap = await getDoc(docRef);
+
+      const data = docSnap.exists() ? docSnap.data() : null
+      const userBio = data.bio
+      setBio(userBio)
+    }
+
+    if (currentUser) {
+      getBio();
+    }
+
     return (
         <Container sx={{ m: 2 }}>
             <Typography variant="h3"><strong>User: {displayName}</strong></Typography>
@@ -31,7 +46,7 @@ export default function UserProfile() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Bio: 
+                  Bio: {bio}
                 </Typography>
                 <Typography variant="body2" color="text.primary">
                 </Typography>
