@@ -10,18 +10,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import { doc,getDoc } from "firebase/firestore";
 
 export default function UserProfile() {
     const {currentUser} = useAuthValue()
     console.log(currentUser)
+
     //set user email from currentUser if it is not null
     // const userEmail = currentUser ? currentUser.email : ''
     const displayName = currentUser ? currentUser.displayName : ''
-    const userBio = currentUser ? currentUser.bio : ''
+    const userEmail = currentUser ? currentUser.email : ''
     return (
         <Container sx={{ m: 2 }}>
-            <Typography variant="h3">User: {displayName}</Typography>
+            <Typography variant="h3"><strong>User: {displayName}</strong></Typography>
             <Card sx={{ maxWidth: 500 }}>
               <CardMedia
                 sx={{ height: 260 }}
@@ -30,12 +31,14 @@ export default function UserProfile() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Bio 
+                  Bio: 
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {userBio}
+                <Typography variant="body2" color="text.primary">
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.primary" >
+                  <strong>  Email: {userEmail} </strong> 
+                </Typography>
+                <Typography variant="body2" color="text.primary">
                     Followers:
                 </Typography>
               </CardContent>
