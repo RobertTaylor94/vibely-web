@@ -1,8 +1,8 @@
-import SideCard from "./SideCard.js";
-import TweetBox from "./TweetBox.js";
-import StoriesBar from "./StoriesBar.js";
-import Postcard from "./PostCard/PostCard.js";
-import NewsList from "./NewsList.js";
+import SideCard from "../components/SideCard.js";
+import TweetBox from "../components/TweetBox.js";
+import StoriesBar from "../components/StoriesBar.js";
+import Postcard from "../components/PostCard/PostCard.js";
+import NewsList from "../components/NewsList.js";
 import { db } from "../firebaseConfig.js";
 import {
   collectionGroup,
