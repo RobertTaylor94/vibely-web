@@ -21,12 +21,12 @@ function TweetBox() {
   const [data, setData] = useState({});
 
   const { currentUser } = useAuthValue();
-  let initial = "";
-  if (currentUser && currentUser.displayName) {
-    initial = currentUser.displayName.charAt(0).toUpperCase();
-  } else {
-    initial = "P";
-  }
+  // let initial = "";
+  // if (currentUser && currentUser.displayName) {
+  //   initial = currentUser.displayName.charAt(0).toUpperCase();
+  // } else {
+  //   initial = "P";
+  // }
 
   const handleInput = (e) => {
     let newInput = { [e.target.name]: e.target.value };
