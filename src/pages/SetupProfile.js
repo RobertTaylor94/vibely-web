@@ -29,7 +29,7 @@ export default function SetupProfile() {
             console.log(error)
         })
 
-        const dbRef = collection(db, "users", `${currentUser.uid}}`)
+        const dbRef = collection(db, "users")
         const user = {
             displayName: data.displayName,
             bio: data.bio,
@@ -42,11 +42,11 @@ export default function SetupProfile() {
         addDoc(dbRef, user)
             .then(docRef => {
                 console.log("Document added successfully")
+                navigate("/profile")
             }).catch(error => {
+                console.log("addDoc Error")
                 console.log(error)
             })
-
-        navigate("/profile")
     }
 
     return (
