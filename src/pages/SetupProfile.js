@@ -50,7 +50,7 @@ export default function SetupProfile() {
     }
 
     return (
-        <Container>
+        <Container sx={{ m: 2 }}>
             <TextField     
                 sx={{ margin: '10' }}
                 name='displayName'
