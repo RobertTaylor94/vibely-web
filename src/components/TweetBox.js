@@ -80,7 +80,7 @@ function TweetBox() {
             </div>
             <div id="tweetPostButton">
               <Button
-                sx={{ borderRadius: 50 }}
+                sx={{ borderRadius: 50, backgroundColor: 'black' }}
                 variant="contained"
                 color="primary"
                 onClick={(e) => postVibe(e)}

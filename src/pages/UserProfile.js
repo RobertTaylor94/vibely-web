@@ -37,7 +37,7 @@ export default function UserProfile() {
 
     return (
         <Container sx={{ m: 2 }}>
-            <Typography variant="h3"><strong>User: {displayName}</strong></Typography>
+            <Typography variant="h3"><strong>{displayName}</strong></Typography>
             <Card sx={{ maxWidth: 500 }}>
               <CardMedia
                 sx={{ height: 260 }}
@@ -46,19 +46,19 @@ export default function UserProfile() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Bio: {bio}
+                  {bio}
                 </Typography>
                 <Typography variant="body2" color="text.primary">
                 </Typography>
                 <Typography variant="body2" color="text.primary" >
                   <strong>  Email: {userEmail} </strong> 
                 </Typography>
-                <Typography variant="body2" color="text.primary">
+                {/* <Typography variant="body2" color="text.primary">
                     Followers:
-                </Typography>
+                </Typography> */}
               </CardContent>
               <CardActions>
-              <Button variant='container' onClick={() => signOut(auth)}>Sign Out</Button>
+              <Button variant='contained' sx={{ backgroundColor: 'black' }}onClick={() => signOut(auth)}>Sign Out</Button>
               </CardActions>
             </Card>
         </Container>       

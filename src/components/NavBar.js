@@ -27,7 +27,7 @@ function NavBar(props) {
                     <Button color="inherit" component={Link} key="search" to="/search" sx={{ display: `${showBlock}` }}>Search</Button>
                 </Box>
                 <Box>
-                    <Button variant="contained" component={Link} key="signup" to="/signup" sx={{ display: `${hideBlock}` }}>Sign Up</Button>
+                    <Button variant="contained" component={Link} key="signup" to="/signup" sx={{ display: `${hideBlock}`, backgroundColor: 'black' }}>Sign Up</Button>
                     {/* <Button variant="contained" endIcon={<AddCircleIcon/>}>New Vibe</Button> */}
                     <Button component={Link} key="profile" to="/profile" sx={{ display: `${showBlock}` }}><Avatar alt="profile icon" src="">{initial}</Avatar></Button>
                 </Box>
