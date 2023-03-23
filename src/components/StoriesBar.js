@@ -2,6 +2,15 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
+import Avatar1 from '../assets/avatars/avatar1.png';
+import Avatar2 from '../assets/avatars/avatar2.png';
+import Avatar3 from '../assets/avatars/avatar3.png';
+import Avatar4 from '../assets/avatars/avatar4.png';
+import Avatar5 from '../assets/avatars/avatar5.png';
+import Avatar6 from '../assets/avatars/avatar6.png';
+import Avatar7 from '../assets/avatars/avatar7.png';
+import Avatar8 from '../assets/avatars/avatar8.png';
+
 
 function StoriesBar() {
 
@@ -16,43 +25,43 @@ function StoriesBar() {
         <Stack sx={{marginRight: 5, marginLeft: 5}} direction="row" spacing={2}>
           <Avatar
             alt="Remy Sharp"
-            src="/static/images/avatar/1.jpg"
+            src={Avatar1}
             sx={{ width: 56, height: 56, border: '3px solid black' }}
           />
           <Avatar
             alt="Sharp"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue' }}
+            src={Avatar2}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9' }}
           />
           <Avatar
             alt="D"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue' }}
+            src={Avatar3}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9' }}
           />
           <Avatar
             alt="M"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue' }}
+            src={Avatar4}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9' }}
           />
           <Avatar
             alt="Remy Sharp"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue'}}
+            src={Avatar5}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9'}}
           />
           <Avatar
             alt="T"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue' }}
+            src={Avatar6}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9' }}
           />
           <Avatar
             alt="L"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue' }}
+            src={Avatar7}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9' }}
           />
           <Avatar
             alt="O"
-            src="/static/images/avatar/1.jpg"
-            sx={{ width: 56, height: 56, border: '3px solid blue' }}
+            src={Avatar8}
+            sx={{ width: 56, height: 56, border: '3px solid #FA9' }}
           />
         </Stack>
       </Card>

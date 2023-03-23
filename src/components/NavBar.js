@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Box, Avatar, Button, Typography, CssBaseline, Toolbar } from "@mui/material";
+import { AppBar, Box, Avatar, Button, CssBaseline, Toolbar } from "@mui/material";
 import { useAuthValue } from "../AuthContext";
+import VibelyLogo from '../assets/vibely-logo.png'
 
 function NavBar(props) {
 
@@ -19,10 +20,10 @@ function NavBar(props) {
   return (
     <Box sx={{ display: "flex", paddingTop: "60px" }}>
         <CssBaseline />
-        <AppBar component='nav' position="fixed" >
+        <AppBar sx={{backgroundColor: "#F0F0F0"}} component='nav' position="fixed" >
             <Toolbar >
                 <Box sx={{ flexGrow: 1, justifyContent: 'space-between', display: "flex"}}>
-                    <Button color="inherit" component={Link} key="home" to="/"><Typography variant="h6">Vibely</Typography></Button>
+                    <Button color="inherit" component={Link} key="home" to="/"><img src={VibelyLogo} alt="vibely-logo" style={{height: 30}} /></Button>
                     <Button color="inherit" component={Link} key="search" to="/search" sx={{ display: `${showBlock}` }}>Search</Button>
                 </Box>
                 <Box>

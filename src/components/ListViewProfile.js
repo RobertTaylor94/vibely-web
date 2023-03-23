@@ -4,6 +4,9 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
+import Avatar3 from '../assets/avatars/avatar3.png';
+import Avatar5 from '../assets/avatars/avatar5.png';
+import Avatar6 from '../assets/avatars/avatar6.png';
 
 function ListViewProfile() {
   return (
@@ -11,7 +14,7 @@ function ListViewProfile() {
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
         <ListItem sx={{ padding: 0, marginBottom: '10px'}}>
           <ListItemAvatar>
-            <Avatar alt="A" src="/static/images/avatar/1.jpg" />
+            <Avatar alt="A" src={Avatar3} />
           </ListItemAvatar>
           <ListItemText
             secondary={
@@ -32,7 +35,7 @@ function ListViewProfile() {
 
         <ListItem sx={{ padding: 0, marginBottom: '10px'}}>
           <ListItemAvatar>
-            <Avatar alt="S" src="/static/images/avatar/2.jpg" />
+            <Avatar alt="S" src={Avatar5} />
           </ListItemAvatar>
         <ListItemText
           secondary={
@@ -52,7 +55,7 @@ function ListViewProfile() {
       </ListItem>
       <ListItem sx={{ padding: 0, marginBottom: '10px'}}>
         <ListItemAvatar>
-          <Avatar alt="S" src="/static/images/avatar/3.jpg" />
+          <Avatar alt="S" src={Avatar6} />
         </ListItemAvatar>
         <ListItemText
           secondary={

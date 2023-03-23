@@ -11,6 +11,7 @@ import {
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
 import GifBoxIcon from "@mui/icons-material/GifBox";
+import Avatar1 from '../assets/avatars/avatar1.png';
 import { useAuthValue } from "../AuthContext";
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
@@ -39,7 +40,7 @@ function TweetBox() {
       uid: currentUser.uid,
       post: data.vibe,
     };
-  
+
     const vibesCollection = collection(db, "vibes", `${currentUser.uid}`, "posts") //sets a reference to a posts subcollection in the current user
     addDoc(vibesCollection, newVibe) //adds a new document containg the post to a subcollection the users own collection
       .then((docRef) => {
@@ -54,7 +55,7 @@ function TweetBox() {
     <Box component="form" autoComplete="off">
       <Card sx={{ height: 130 }}>
         <CardContent className="row d-flex flex-nowrap justify-content-around">
-          <Avatar>{initial}</Avatar>
+          <Avatar src={Avatar1} />
           <TextField
             sx={{ maxWidth: "85%" }}
             placeholder="What's on your mind?"
