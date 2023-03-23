@@ -12,11 +12,11 @@ The site was built using React with a number of packages to quickly spin up the 
 
 ## Links
 
-(Deployed Link)[https://main--endearing-sundae-33b843.netlify.app]
+[Deployed Link](https://main--endearing-sundae-33b843.netlify.app)
 
-(GitHub Repo)[https://github.com/MattGaarder/vibely]
+[GitHub Repo](https://github.com/MattGaarder/vibely)
 
-(Vibely iOS Repo)[https://github.com/RobertTaylor94/vibely-ios]
+[Vibely iOS Repo](https://github.com/RobertTaylor94/vibely-ios)
 
 ## Gallery
 
