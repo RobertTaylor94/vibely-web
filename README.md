@@ -20,3 +20,5 @@ The site was built using React with a number of packages to quickly spin up the 
 
 ## Gallery
 
+<img src='./src/assets/screenshots/home.png' width='500'>
+<img src='./src/assets/screenshots/profile.png' width='500'>
