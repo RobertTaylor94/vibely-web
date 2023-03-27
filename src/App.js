@@ -4,7 +4,7 @@ import NavBar from './components/NavBar.js'
 import Home from './pages/Home.js'
 import UserProfile from './pages/UserProfile/UserProfile';
 import SignUp from './components/Authentication/signupScreen';
-import SignIn from './components/Authentication/Signinscreen';
+import SignIn from './pages/SignIn/Signinscreen';
 import { useState, useEffect } from 'react';
 import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
