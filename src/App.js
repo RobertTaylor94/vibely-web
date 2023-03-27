@@ -2,7 +2,7 @@ import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.js'
 import Home from './pages/Home.js'
-import UserProfile from './pages/UserProfile';
+import UserProfile from './pages/UserProfile/UserProfile';
 import SignUp from './components/Authentication/signupScreen';
 import SignIn from './components/Authentication/Signinscreen';
 import { useState, useEffect } from 'react';
