@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.js'
 import Home from './pages/Home.js'
 import UserProfile from './pages/UserProfile/UserProfile';
-import SignUp from './components/Authentication/signupScreen';
+import SignUp from './pages/SignUp/signupScreen';
 import SignIn from './pages/SignIn/Signinscreen';
 import { useState, useEffect } from 'react';
 import { AuthProvider } from './AuthContext';

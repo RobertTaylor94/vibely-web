@@ -1,34 +1,11 @@
-import { useState } from "react";
+import { React } from "react";
 import { Button, Container, TextField, Box, Typography } from "@mui/material";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
+import { ViewModel } from "./ViewModel.js";
 
 function SignUp() {
-    const [data, setData] = useState({});
-    const navigate = useNavigate();
 
-    const handleInput = (event) => {
-        let newInput = { [event.target.name]: event.target.value }
-        setData({ ...data, ...newInput})
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        
-        createUserWithEmailAndPassword(auth, data.email, data.password)
-        .then((response) => {
-            navigate("/setup")
-        })
-        .catch((err) => {
-            console.log(err.code)
-            alert(err.message)
-        })
-        const newData = ""
-        setData({newData})
-    }
+    const { handleInput, handleSubmit } = ViewModel();
 
     return (
     <div>
