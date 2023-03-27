@@ -1,14 +1,12 @@
 import React from "react";
-import { TextField, Container, Button } from "@mui/material";
-import { useAuthValue } from "../AuthContext";
-import { updateProfile } from "firebase/auth";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { useState } from "react";
+import { useAuthValue } from "../../AuthContext";
+import { updateProfile } from "firebase/auth";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
-export default function SetupProfile() {
-
+const ViewModel = () => {
     const {currentUser} = useAuthValue()
     const [data, setData] = useState({});
     const navigate = useNavigate();
@@ -39,7 +37,7 @@ export default function SetupProfile() {
 
         console.log(user)
 
-        addDoc(dbRef, user)
+        setDoc(doc(db, "users", currentUser.uid), user)
             .then(docRef => {
                 console.log("Document added successfully")
                 navigate("/profile")
@@ -49,23 +47,10 @@ export default function SetupProfile() {
             })
     }
 
-    return (
-        <Container sx={{ m: 2 }}>
-            <TextField     
-                sx={{ margin: '10' }}
-                name='displayName'
-                id='displayName'
-                label='Display Name'
-                variant='outlined'
-                onChange={(e) => handleInput(e)}/>
-            <TextField     
-                sx={{ margin: '10' }}
-                name='bio'
-                id='bio'
-                label='Bio'
-                variant='outlined'
-                onChange={(e) => handleInput(e)}/>
-            <Button variant="contained" onClick={(e) => handleSubmit(e)}>Complete Profile</Button>
-        </Container>
-    )
+    return {
+        handleInput,
+        handleSubmit
+    }
 }
+
+export {ViewModel};

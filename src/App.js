@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { AuthProvider } from './AuthContext';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
-import SetupProfile from './pages/SetupProfile';
+import SetupProfile from './pages//SetupProfile/SetupProfile.js';
 import FollowerProfile  from './pages/FollowerProfile';
 
 function App() {
